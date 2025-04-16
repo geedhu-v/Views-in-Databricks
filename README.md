@@ -1,19 +1,19 @@
 # Views-in-Databricks
 
-<b> Views </b> contains query definition.
-
-There are mainly three types of Views:
-1. Stored View/ View:
-  a. Persisted in database.
-  b. Syntax: CREATE VIEW View_name AS Query
-  c. Dropped only by "DROP VIEW" command.
-
-3. Temporary View
-   a. Session scoped view
-   b. CREATE TEMP VIEW View_Name AS Query
-   c. Dropped when session ends. - Session refers to Opening a new notebook, detaching and reattaching to a cluster, Installing a python package and Restarting a cluster.
-
-5. Global Temporary View
-  a. Cluster scoped view
-  b. CREATE GLOBAL TEMP VIEW View_Name AS QUERY
-  c. Dropped when cluster ends.
+<b> Views </b> contains query definition. <br>
+<br>
+There are mainly three types of Views:<br>
+1.<b> Stored View/ View </b>:<br>
+  a. Persisted in database. <br>
+  b. Syntax: CREATE VIEW View_name AS Query <br>
+  c. Dropped only by "DROP VIEW" command.<br>
+<br>
+2.<b> Temporary View</b> <br>
+   a. Session scoped view <br>
+   b. CREATE TEMP VIEW View_Name AS Query <br>
+   c. Dropped when session ends. - Session refers to Opening a new notebook, detaching and reattaching to a cluster, Installing a python package and Restarting a cluster.<br>
+<br>
+3. <b> Global Temporary View </b> <br>
+  a. Cluster scoped view <br>
+  b. CREATE GLOBAL TEMP VIEW View_Name AS QUERY<br>
+  c. Dropped when cluster ends.<br>
