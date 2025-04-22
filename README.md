@@ -18,18 +18,20 @@ There are mainly three types of Views:<br>
   b. CREATE GLOBAL TEMP VIEW View_Name AS QUERY<br>
   c. Dropped when cluster ends.<br>
 ## Operations with Tables
-<b> Overwritting Coomands <\b> <br
+<b> Overwritting Coomands </b> 
 <br>
 1. CREATE or REPLACE TABLE Table_name <br>
    SELECT * FROM file_format.`/path/` <br>
 2. INSERT OVERWRITE table_name <br>
    SELECT * FROM  file_format.`/path/` <br>
 
-<b> Appending Commands <\b> <br>
+<b> Appending Commands </b> 
+<br>
 1. INSERT INTO table_name <br>
     SELECT * FROM  file_format.`/path/` <br>
 
-<b> Merging Command <\b>
+<b> Merging Command </b>
+<br>
 MERGE INTO table_name1 t1 <br>
 USING table_name2 t2 <br>
 on t1.id == t2.id <br>
