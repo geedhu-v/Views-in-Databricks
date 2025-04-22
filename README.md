@@ -1,5 +1,5 @@
-# Views-in-Databricks
-
+# Views-in-Databricks and Different Operations with Tables
+## Views
 <b> Views </b> contains query definition. <br>
 <br>
 There are mainly three types of Views:<br>
@@ -17,3 +17,21 @@ There are mainly three types of Views:<br>
   a. Cluster scoped view <br>
   b. CREATE GLOBAL TEMP VIEW View_Name AS QUERY<br>
   c. Dropped when cluster ends.<br>
+## Operations with Tables
+<b> Overwritting Coomands <\b> <br
+<br>
+1. CREATE or REPLACE TABLE Table_name <br>
+   SELECT * FROM file_format.`/path/` <br>
+2. INSERT OVERWRITE table_name <br>
+   SELECT * FROM  file_format.`/path/` <br>
+
+<b> Appending Commands <\b> <br>
+1. INSERT INTO table_name <br>
+    SELECT * FROM  file_format.`/path/` <br>
+
+<b> Merging Command <\b>
+MERGE INTO table_name1 t1 <br>
+USING table_name2 t2 <br>
+on t1.id == t2.id <br>
+WHEN MATACHED {....do....} <br>
+WHEN NOT MATCHED {....do....}  <br>
