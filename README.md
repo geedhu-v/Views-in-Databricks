@@ -1,4 +1,4 @@
-# Views-in-Databricks and Different Operations with Tables
+# Databricks with sparkSQL
 ## Views
 <b> Views </b> contains query definition. <br>
 <br>
@@ -39,3 +39,28 @@ USING table_name2 t2 <br>
 on t1.id == t2.id <br>
 WHEN MATACHED {....do....} <br>
 WHEN NOT MATCHED {....do....}  <br>
+
+## Advanced Transformations using SparkSQL
+
+<b> Scenario 1: When there is a column in dataset that contains JSON string, then that can be </b>
+<br>
+1. Accessed using ":" sign for example: SELECT customer_id, profile:first_name, profile:address:country FROM customers; <br>
+2. Can be converted to struct type using: <br>
+   CREATE OR REPLACE TEMP VIEW parsed_customers AS <br>
+   SELECT customer_id, from_json(profile, schema_of_json('{"first_name":"Thomas","last_name":"Lane","gender":"Male","address":{"street":"06 Boulevard Victor Hugo","city":"Paris","country":"France"}}')) AS profile_struct <br>
+   FROM customers; <br>
+3. After converting to struct type, nested values can be accessed using '.'. <br>
+For example: SELECT customer_id, profile_struct.first_name, profile_struct.address.country FROM parsed_customers <br>
+<br>
+<br>
+<b> Scenario 2: Splitting the collection of arrays using explode function: </b>
+<br> Syntax: SELECT order_id, customer_id, explode(books) AS book FROM orders
+<br>
+<br>
+<b> Scenario 3: Use of collect set function:</b>
+<br> Syntax: SELECT customer_id,   collect_set(order_id) AS orders_set,   collect_set(books.book_id) AS books_set FROM orders GROUP BY customer_id
+<br> <br>
+<b> Scenario 4: use of Flatten Arrays </b>
+<br> Syntax: SELECT customer_id,
+  collect_set(books.book_id) As before_flatten,   array_distinct(flatten(collect_set(books.book_id))) AS after_flatten FROM orders GROUP BY customer_id
+
