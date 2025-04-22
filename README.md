@@ -33,8 +33,7 @@ There are mainly three types of Views:<br>
 
 <b> Merging Command </b>
 <br> Note: While using Merge, duplicate records are not inserted, and also when performing merge, with one transaction update, insert, and delete (UPSERT) 
-<br> all three operations are performed during a single merge transaction.
-<br>
+all three operations are performed during a single merge transaction. <br> <br>
 MERGE INTO table_name1 t1 <br>
 USING table_name2 t2 <br>
 on t1.id == t2.id <br>
