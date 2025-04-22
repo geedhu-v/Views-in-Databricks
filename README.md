@@ -89,3 +89,18 @@ For example: SELECT customer_id, profile_struct.first_name, profile_struct.addre
 7. Semi Joins <br>
 <img width="900" alt="image" src="https://github.com/user-attachments/assets/d3dacd0f-fff3-428a-a3c4-e90d91b7e7ef" />
 
+<b> Set Operations: </b>
+1. Union: <br>
+<img width="908" alt="image" src="https://github.com/user-attachments/assets/30c90f47-6038-404c-8c32-df984c7b65f0" />
+<br> 2. Intersect <br>
+<img width="721" alt="image" src="https://github.com/user-attachments/assets/1215f04a-2dea-4725-a8e7-cbdfa258bfd7" />
+
+<br> 3. Minus <br>
+<img width="898" alt="image" src="https://github.com/user-attachments/assets/04fea61b-1729-4b11-8dd2-aa2834414139" />
+
+<b> Reshaping Data with Pivot: </b>
+<img width="896" alt="image" src="https://github.com/user-attachments/assets/bbe31d82-d04f-4f4a-97b5-801d2b8f9d5f" />
+
+
+
+
